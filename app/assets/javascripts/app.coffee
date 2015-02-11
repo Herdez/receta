@@ -34,7 +34,7 @@ recipes = [
 controllers = angular.module('controllers',[])
 controllers.controller("RecipesController", [ '$scope', '$routeParams', '$location',
   ($scope,$routeParams,$location)->
-    $scope.search = (keywords)->  $location.path("/").search('keywords',keywords)
+    $scope.search = (keywords)->  $location.path("http:/").search('keywords',keywords)
 
     if $routeParams.keywords
       keywords = $routeParams.keywords.toLowerCase()
