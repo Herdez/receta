@@ -46,6 +46,8 @@ group :test, :development do
 	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'selenium-webdriver', '>=2.45.0.dev3'
+	gem 'teaspoon'
+	gem 'phantomjs'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

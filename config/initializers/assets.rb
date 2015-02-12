@@ -8,3 +8,10 @@ Rails.application.config.assets.precompile += %w( bootstrap/glyphicons-halflings
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( 
+  teaspoon.css
+  teaspoon-teaspoon.js
+  teaspoon-jasmine.js
+)
+
+Rails.application.config.assets.precompile += %w( jasmine/1.3.1.js )
