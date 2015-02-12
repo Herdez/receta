@@ -1,4 +1,5 @@
 # Teaspoon includes some support files, but you can use anything from your own support path too.
+
 # require support/jasmine-jquery-1.7.0
 # require support/jasmine-jquery-2.0.0
 # require support/sinon
@@ -30,6 +31,11 @@
 # may get better load performance if you require the specific files that are being used in the spec that tests them.
 #= require application
 #= require angular-mocks/angular-mocks
+
+
 beforeEach ->
   this.addMatchers
     toEqualData: (expected)-> return angular.equals(this.actual, expected)
+
+
+
