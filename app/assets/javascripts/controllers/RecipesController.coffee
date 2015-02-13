@@ -1,12 +1,13 @@
 controllers = angular.module('controllers')
-controllers.controller("RecipesController", [ '$scope', '$routeParams', '$location', '$resource',
-  ($scope,$routeParams,$location,$resource)->
-    $scope.search = (keywords)->  $location.path("/").search('keywords',keywords)
+controllers.controller("RecipesController", [ '$scope', '$routeParams', '$resource',
+  ($scope,$routeParams,$resource)->
     Recipe = $resource('/recipes/:recipeId', { recipeId: "@id", format: 'json' })
 
+    Recipe.get({recipeId: $routeParams.recipeId},
+      ( (recipe)-> $scope.recipe = recipe ),
+      ( (httpResponse)-> $scope.recipe = null)
+    )
+    
 
-    if $routeParams.keywords
-      Recipe.query(keywords: $routeParams.keywords, (results)-> $scope.recipes = results)
-    else
-      $scope.recipes = []
+    
 ])
