@@ -19,8 +19,5 @@ receta.config([ '$routeProvider',
        )
 ])
 
-recipes = [
-  {},
-]
 
 controllers = angular.module('controllers',[])
