@@ -1,4 +1,4 @@
-describe "RecipeController", ->
+describe "RecipesController", ->
   scope        = null
   ctrl         = null
   routeParams  = null
