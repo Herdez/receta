@@ -7,8 +7,14 @@ receta = angular.module('receta',[
   'angular-flash.flash-alert-directive'
 ])
 
-receta.config([ '$routeProvider',
-($routeProvider)->
+receta.config([ '$routeProvider', 'flashProvider',
+  ($routeProvider,flashProvider)->
+
+    flashProvider.errorClassnames.push("alert-danger")
+    flashProvider.warnClassnames.push("alert-warning")
+    flashProvider.infoClassnames.push("alert-info")
+    flashProvider.successClassnames.push("alert-success")
+
     $routeProvider
       .when('/',
         templateUrl: "index.html"
@@ -19,5 +25,23 @@ receta.config([ '$routeProvider',
        )
 ])
 
+recipes = [
+  {
+    id: 1
+    name: 'Baked Potato w/ Cheese'
+  },
+  {
+    id: 2
+    name: 'Garlic Mashed Potatoes',
+  },
+  {
+    id: 3
+    name: 'Potatoes Au Gratin',
+  },
+  {
+    id: 4
+    name: 'Baked Brussel Sprouts',
+  },
+]
 
 controllers = angular.module('controllers',[])
